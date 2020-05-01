@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Price Prediction</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    
+    table {
+  border: none;
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: center;
+  vertical-align: middle;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: Roboto;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: Roboto;
+  font-size: 16px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 300px;
+}
+
+.column2 {
+  width: 300px;
+}
+
+.column3 {
+  width: 577px;
+}
+
+.column4 {
+  width: 270px;
+
+}
+
+
+@media screen and (max-width: 992px) {
+  table {
+    display: block;
+  }
+  table > *, table tr, table td, table th {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody tr {
+    height: auto;
+    padding: 37px 0;
+  }
+  table tbody tr td {
+    padding-left: 40% !important;
+    margin-bottom: 24px;
+  }
+  table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table tbody tr td:before {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0;
+  }
+tbody tr {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-table100 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+  </style>
+
+
+</head>
+
+
+
+<body >
+  <!-- <img src="yes_bank.jpg" style="position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;"> -->
+ <p align="center" style="color:#000; font-size: 80px;">RELIANCE COMMUNICATIONS</p>
+  <img src="reliance open.png">  <img src="reliance high.png"><br>
+  <img src="reliance low.png">  <img src="reliance close.png"><br><br><br>
+  <p align="center" style="color:#000; font-size: 40px;">Predicted Stock Prices</p>
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  <tr><td>39.48567199707031</td><td>40.199913024902344</td><td>38.463905334472656</td><td>39.39347457885742</td></tr>
+<tr><td>39.715755462646484</td><td>40.427337646484375</td><td>38.608158111572266</td><td>39.54393005371094</td></tr>
+<tr><td>38.771697998046875</td><td>39.45833206176758</td><td>37.67710494995117</td><td>38.579551696777344</td></tr>
+<tr><td>38.22895812988281</td><td>38.889503479003906</td><td>37.1510009765625</td><td>38.031166076660156</td></tr>
+<tr><td>39.04798126220703</td><td>39.71171569824219</td><td>37.939083099365234</td><td>38.83258819580078</td></tr>
+<tr><td>39.2315673828125</td><td>39.91554260253906</td><td>38.148136138916016</td><td>39.03123092651367</td></tr>
+<tr><td>38.942359924316406</td><td>39.645530700683594</td><td>37.925209045410156</td><td>38.780731201171875</td></tr>
+<tr><td>37.482948303222656</td><td>38.1822509765625</td><td>36.568336486816406</td><td>37.37976837158203</td></tr>
+<tr><td>37.371158599853516</td><td>38.069549560546875</td><td>36.49405288696289</td><td>37.28546905517578</td></tr>
+<tr><td>36.46819305419922</td><td>37.165348052978516</td><td>35.66484451293945</td><td>36.413787841796875</td></tr>
+</tbody>
+</table>
+
+<br><br>
+
+<p align="center" style="color:#000; font-size: 40px;">Predicted Stock Prices after Feedback</p>
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  <tr><td>39.63927459716797</td><td>40.350868225097656</td><td>38.534950256347656</td><td>39.469032287597656</td></tr>
+<tr><td>38.7501106262207</td><td>39.43561553955078</td><td>37.65640640258789</td><td>38.55758285522461</td></tr>
+<tr><td>37.84828567504883</td><td>38.50635528564453</td><td>36.7886848449707</td><td>37.65894317626953</td></tr>
+<tr><td>37.750816345214844</td><td>38.4029541015625</td><td>36.70182800292969</td><td>37.56127166748047</td></tr>
+<tr><td>39.26318359375</td><td>39.94611358642578</td><td>38.17937469482422</td><td>39.062522888183594</td></tr>
+<tr><td>39.432411193847656</td><td>40.13965606689453</td><td>38.3916015625</td><td>39.26021957397461</td></tr>
+<tr><td>38.87567901611328</td><td>39.58804702758789</td><td>37.90119171142578</td><td>38.746910095214844</td></tr>
+<tr><td>37.51000213623047</td><td>38.21199035644531</td><td>36.62532043457031</td><td>37.42117691040039</td></tr>
+<tr><td>37.22429656982422</td><td>37.92758560180664</td><td>36.3909797668457</td><td>37.15709686279297</td></tr>
+<tr><td>36.26472473144531</td><td>36.97622299194336</td><td>35.509788513183594</td><td>36.233943939208984</td></tr>
+</tbody>
+</table>
+
+
+<br><br>
+
+
+<p align="center" style="color:#000; font-size: 40px;">Original Stock Prices</p>
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  
+</tbody>
+</table>    
+
+      
+    
+
+   
+
+ 
+
+
+</body>
+</html>

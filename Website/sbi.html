@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Price Prediction</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+    
+    table {
+  border: none;
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: center;
+  vertical-align: middle;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: Roboto;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: Roboto;
+  font-size: 16px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 300px;
+}
+
+.column2 {
+  width: 300px;
+}
+
+.column3 {
+  width: 577px;
+}
+
+.column4 {
+  width: 270px;
+
+}
+
+
+@media screen and (max-width: 992px) {
+  table {
+    display: block;
+  }
+  table > *, table tr, table td, table th {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody tr {
+    height: auto;
+    padding: 37px 0;
+  }
+  table tbody tr td {
+    padding-left: 40% !important;
+    margin-bottom: 24px;
+  }
+  table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table tbody tr td:before {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0;
+  }
+tbody tr {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-table100 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+  </style>
+
+
+
+</head>
+
+
+
+<body >
+  <!-- <img src="yes_bank.jpg" style="position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;"> -->
+ <p align="center" style="color:#000; font-size: 80px;">STATE BANK OF INDIA(SBI)</p>
+	<img src="sbi open.png"> <br><br> <img src="sbi high.png"><br><br>
+  <img src="sbi low.png"> <br><br> <img src="sbi close.png"><br><br><br><br>
+
+<p align="center" style="color:#000; font-size: 40px;">Predicted Stock Prices</p>
+
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  
+<tr><td>239.29824829101562</td><td>241.18453979492188</td><td>235.46337890625</td><td>237.27362060546875</td></tr>
+<tr><td>243.3194580078125</td><td>245.16883850097656</td><td>240.11407470703125</td><td>242.0528564453125</td></tr>
+<tr><td>240.3306427001953</td><td>241.9459686279297</td><td>238.26478576660156</td><td>240.7340850830078</td></tr>
+<tr><td>241.68629455566406</td><td>243.5943145751953</td><td>237.69146728515625</td><td>239.1371612548828</td></tr>
+<tr><td>234.29263305664062</td><td>236.57281494140625</td><td>233.11851501464844</td><td>234.19247436523438</td></tr>
+<tr><td>252.12918090820312</td><td>254.1094970703125</td><td>250.84495544433594</td><td>252.59649658203125</td></tr>
+<tr><td>227.4481964111328</td><td>227.8641357421875</td><td>224.2841339111328</td><td>226.66268920898438</td></tr>
+<tr><td>244.83631896972656</td><td>245.26153564453125</td><td>240.9888916015625</td><td>242.64210510253906</td></tr>
+<tr><td>241.4265899658203</td><td>242.6099395751953</td><td>238.26812744140625</td><td>239.496337890625</td></tr>
+<tr><td>228.21055603027344</td><td>230.2326202392578</td><td>224.79608154296875</td><td>228.45262145996094</td></tr>
+
+</tbody>
+</table>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <br><br><br>
+
+<p align="center" style="color:#000; font-size: 40px;">Predicted Stock Prices after Feedback</p>
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  <tr><td>248.59039306640625</td><td>250.4648895263672</td><td>245.3018341064453</td><td>247.26553344726562</td></tr>
+<tr><td>236.25540161132812</td><td>237.85862731933594</td><td>234.250732421875</td><td>236.69444274902344</td></tr>
+<tr><td>242.69261169433594</td><td>244.60589599609375</td><td>238.6747589111328</td><td>240.12559509277344</td></tr>
+<tr><td>235.16238403320312</td><td>237.4488983154297</td><td>233.98126220703125</td><td>235.0595703125</td></tr>
+<tr><td>248.58941650390625</td><td>250.5500946044922</td><td>247.3340301513672</td><td>249.06439208984375</td></tr>
+<tr><td>234.62086486816406</td><td>235.04730224609375</td><td>231.3500213623047</td><td>233.79054260253906</td></tr>
+<tr><td>243.39613342285156</td><td>243.81085205078125</td><td>239.56590270996094</td><td>241.20648193359375</td></tr>
+<tr><td>242.79713439941406</td><td>243.98403930664062</td><td>239.62161254882812</td><td>240.85215759277344</td></tr>
+<tr><td>226.2913360595703</td><td>228.3029022216797</td><td>222.91246032714844</td><td>226.552978515625</td></tr>
+<tr><td>248.38555908203125</td><td>250.9997100830078</td><td>245.7161102294922</td><td>248.65945434570312</td></tr>
+
+</tbody>
+</table>      
+    
+
+<br><br>
+
+
+<p align="center" style="color:#000; font-size: 40px;">Original Stock Prices</p>
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  
+</tbody>
+</table>   
+   
+
+ 
+
+
+</body>
+</html>

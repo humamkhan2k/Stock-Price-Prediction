@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Price Prediction</title>
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+    
+    table {
+  border: none;
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #36304a;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+table td, table th {
+  text-align: center;
+  vertical-align: middle;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+
+.table100-head th{
+  font-family: Roboto;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+tbody tr {
+  font-family: Roboto;
+  font-size: 16px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.column1 {
+  width: 300px;
+}
+
+.column2 {
+  width: 300px;
+}
+
+.column3 {
+  width: 577px;
+}
+
+.column4 {
+  width: 270px;
+
+}
+
+
+@media screen and (max-width: 992px) {
+  table {
+    display: block;
+  }
+  table > *, table tr, table td, table th {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody tr {
+    height: auto;
+    padding: 37px 0;
+  }
+  table tbody tr td {
+    padding-left: 40% !important;
+    margin-bottom: 24px;
+  }
+  table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table tbody tr td:before {
+    font-family: Roboto;
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.2;
+    font-weight: unset;
+    position: absolute;
+    width: 40%;
+    left: 30px;
+    top: 0;
+  }
+tbody tr {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-table100 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+  </style>
+
+
+
+</head>
+
+
+
+<body >
+  <!-- <img src="yes_bank.jpg" style="position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;"> -->
+ <p align="center" style="color:#000; font-size: 80px;">TATA STEEL</p>
+	<img src="tata steel open.png"> <br><br> <img src="tata steel high.png"><br><br>
+  <img src="tata steel low.png"> <br><br> <img src="tata steel close.png"><br><br><br>
+
+<p align="center" style="color:#000; font-size: 40px;">Predicted Stock Prices</p>
+
+  <table >
+    <thead>
+  <tr class="table100-head">
+    <th>Open Price</th>
+    <th>High Price</th>
+    <th>Low Price</th>
+    <th>Close Price</th>
+  </tr>
+</thead>
+<tbody>
+  <tr><td>620.4309692382812</td><td>628.9739990234375</td><td>615.5519409179688</td><td>620.9996337890625</td></tr>
+<tr><td>617.924560546875</td><td>626.863525390625</td><td>614.0681762695312</td><td>619.6884765625</td></tr>
+<tr><td>643.6888427734375</td><td>652.8428344726562</td><td>633.990966796875</td><td>644.09326171875</td></tr>
+<tr><td>681.94482421875</td><td>689.4078369140625</td><td>670.3931884765625</td><td>680.9909057617188</td></tr>
+<tr><td>686.9887084960938</td><td>700.0159301757812</td><td>685.1094970703125</td><td>693.04931640625</td></tr>
+<tr><td>606.1756591796875</td><td>617.3220825195312</td><td>602.92236328125</td><td>610.621826171875</td></tr>
+<tr><td>679.4061279296875</td><td>682.8626098632812</td><td>669.4127197265625</td><td>675.9146118164062</td></tr>
+<tr><td>615.6770629882812</td><td>617.2131958007812</td><td>608.0449829101562</td><td>609.3109130859375</td></tr>
+<tr><td>689.361083984375</td><td>693.4216918945312</td><td>682.524658203125</td><td>687.6251831054688</td></tr>
+<tr><td>660.56591796875</td><td>669.6015625</td><td>656.9852905273438</td><td>663.5868530273438</td></tr>
+
+
+</tbody>
+</table>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    
+
+      
+    
+
+   
+
+ 
+
+
+</body>
+</html>
